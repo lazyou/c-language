@@ -1,0 +1,11 @@
+1.笔记用 Visual Studio Code 来记录， 并使用markdown做笔记。
+2.书中源代码按照章节建立文件夹， 使用vim来操作。
+3.书的目录要自己敲打， 并使用markdown做笔记。
+	ctrl + shfit + v 快速markdown预览。
+
+
+markdown：
+	markdown是文档结构描述语言，不支持任何格式。
+	换行： 句末多打两个空格就是换行。
+	代码： ```php 类似的方式指定代码片段高亮的语言
+	tab： 用 > 符号 或者 4个空格。 （显然4个空格太傻逼了）
