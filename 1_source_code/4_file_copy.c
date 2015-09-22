@@ -3,10 +3,11 @@
 main()
 {
     int c;
-
+    
     c = getchar();
     while (c != EOF) {
-	putchar(c);
-	c = getchar();
+	    printf("get \n");
+        putchar(c);
+	    c = getchar();
     }
 }
