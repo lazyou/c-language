@@ -1,15 +1,21 @@
 #include <stdio.h>
 
-#define MAXLINE 1000
+#define MAXLINE 1000 // 允许输入行的最大长度
+
+/* 外部变量 */
+int max; // 目前为止发现的最长行的长度
+char line[MAXLINE]; // 当前的输入行 
+char longest[MAXLINE]; // 用于保存最长的行
 
 int get_line(void);
 void copy(void);
 
+// 打印最长输入行： 特别版本， 关键字 extern 
 main()
 {
     int len;
-    int max;
-    char longest[MAXLINE];
+    extern int max;
+    extern char longest[];
 
     max = 0;
     while ((len = get_line()) > 0)
@@ -18,7 +24,7 @@ main()
             copy();
         }
 
-    if (max > 0)
+    if (max > 0) // 存在这样的行
         printf("%s", longest);
 
     return 0;
@@ -27,7 +33,7 @@ main()
 int get_line(void)
 {
     int c, i;
-    char line[MAXLINE];
+    extern char line[];
 
     for (i=0; i< MAXLINE-1 
         && (c=getchar()) != EOF 
@@ -46,7 +52,7 @@ int get_line(void)
 void copy(void)
 {
     int i;
-    char line[MAXLINE], longest[MAXLINE];
+    extern char line[], longest[];
 
     i = 0;
     while ((longest[i] = line[i]) != '\0')
